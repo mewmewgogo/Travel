@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>丁一与孙晶 · 亲密关系相处建议</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --berry: #3D0E24;
+  --berry-mid: #5C1F3A;
+  --berry-light: #8B3A58;
+  --rose: #C47A8E;
+  --blush: #E8C4D0;
+  --cream: #F8F0E8;
+  --gold: #C4A35A;
+  --gold-light: #E8D4A0;
+  --gold-pale: #F5EDD8;
+  --ink: #1A0F14;
+  --muted: #7A5665;
+  --blue: #1B4F8A;
+  --blue-light: #4A7DBF;
+  --purple: #5C2E8A;
+  --purple-light: #9B72BF;
+  --white: #FFFFFF;
+  --slide-w: 1200px;
+  --slide-h: 675px;
+}
+
+html, body {
+  width: 100%; height: 100%;
+  background: #0D0608;
+  font-family: 'Noto Serif SC', serif;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* ── Presentation Shell ── */
+#stage {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+#deck {
+  position: relative;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* ── Slides ── */
+.slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.slide.active .reveal { animation: slideUp 0.7s cubic-bezier(0.4,0,0.2,1) both; }
+.slide.active .reveal-1 { animation-delay: 0.1s; }
+.slide.active .reveal-2 { animation-delay: 0.25s; }
+.slide.active .reveal-3 { animation-delay: 0.4s; }
+.slide.active .reveal-4 { animation-delay: 0.55s; }
+.slide.active .reveal-5 { animation-delay: 0.7s; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+/* ── Navigation ── */
+#nav {
+  position: fixed;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px;
+  z-index: 100;
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dot.active { background: var(--gold); transform: scale(1.4); }
+.dot:hover { background: rgba(255,255,255,0.6); }
+
+#nav-btns {
+  position: fixed;
+  bottom: 0; left: 0; right: 0; top: 0;
+  pointer-events: none;
+  z-index: 99;
+}
+.nav-zone {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 15%;
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.nav-zone:hover { opacity: 1; }
+.nav-zone.left { left: 0; }
+.nav-zone.right { right: 0; }
+.nav-arrow {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 18px;
+}
+
+/* slide counter */
+#counter {
+  position: fixed;
+  top: 20px; right: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 2px;
+  z-index: 100;
+}
+
+/* ─────────────────────────────────────────────
+   SLIDE 1 · COVER
+───────────────────────────────────────────── */
+#s1 { background: var(--berry); }
+
+.s1-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 80% at 75% 50%, #5C1F3A 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, #220A15 0%, transparent 50%);
+}
+.s1-left {
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 300px;
+  background: #220A15;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  border-right: 1px solid rgba(196,163,90,0.2);
+}
+.s1-gold-line {
+  width: 40px; height: 2px;
+  background: var(--gold);
+  margin: 16px 0;
+}
+.s1-label { font-size: 11px; letter-spacing: 3px; color: var(--blush); text-transform: uppercase; }
+.s1-person { font-size: 13px; font-weight: 600; color: var(--gold-light); margin-top: 6px; }
+.s1-sub { font-size: 11px; color: var(--rose); opacity: 0.8; }
+
+.s1-right {
+  position: absolute;
+  left: 330px; top: 0; right: 0; bottom: 0;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 60px 60px 60px 0;
+}
+.s1-eyebrow {
+  font-size: 11px; letter-spacing: 4px; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.s1-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 700;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.s1-title span { color: var(--gold); }
+.s1-divider {
+  width: 60px; height: 2px;
+  background: var(--rose);
+  margin: 20px 0;
+}
+.s1-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 300;
+  color: var(--gold-light);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.s1-desc { font-size: 12px; color: var(--blush); opacity: 0.7; letter-spacing: 1px; }
+
+.s1-cards {
+  position: absolute;
+  bottom: 50px; left: 330px; right: 60px;
+  display: flex; gap: 16px;
+}
+.s1-card {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(196,163,90,0.2);
+  border-top: 2px solid var(--gold);
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────
+   SLIDE 2 · WHY CONNECTED
+───────────────────────────────────────────── */
+#s2 { background: var(--cream); }
+
+.s2-header {
+  padding: 44px 60px 0;
+  border-bottom: 1px solid rgba(61,14,36,0.12);
+  padding-bottom: 20px;
+}
+.s2-tag {
+  font-size: 10px; letter-spacing: 3px; color: var(--berry-light);
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.s2-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; color: var(--berry);
+}
+
+.s2-body {
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  gap: 0;
+  padding: 28px 60px;
+  height: calc(100% - 110px);
+}
+
+.s2-card {
+  border-radius: 3px;
+  padding: 24px;
+  display: flex; flex-direction: column;
+}
+.s2-card.ding { background: #EBF2FA; border-top: 3px solid var(--blue); }
+.s2-card.sun  { background: #F0EAF7; border-top: 3px solid var(--purple); }
+
+.s2-card-title {
+  font-size: 15px; font-weight: 700;
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.s2-card.ding .s2-card-title { color: var(--blue); }
+.s2-card.sun  .s2-card-title { color: var(--purple); }
+.s2-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+.s2-point {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin-bottom: 10px; font-size: 12.5px; color: var(--ink); line-height: 1.6;
+}
+.s2-arrow { color: var(--rose); font-size: 10px; margin-top: 4px; flex-shrink: 0; }
+
+.s2-middle {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px; padding: 0 10px;
+}
+.s2-clash {
+  font-size: 11px; font-weight: 600; color: var(--berry);
+  letter-spacing: 2px; text-align: center;
+}
+.s2-clash-char {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; color: var(--gold);
+  text-align: center; line-height: 1;
+}
+.s2-middle-line { width: 1px; height: 40px; background: var(--gold); opacity: 0.4; }
+.s2-heart { font-size: 28px; }
+
+.s2-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: var(--berry);
+  padding: 14px 60px;
+  font-size: 12px; color: var(--cream);
+  line-height: 1.6;
+}
+.s2-bottom strong { color: var(--gold-light); }
+
+/* ─────────────────────────────────────────────
+   SLIDE 3 · CLASH ESSENCE (DARK)
+───────────────────────────────────────────── */
+#s3 { background: var(--ink); }
+
+.s3-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 60%, rgba(92,31,58,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(27,20,53,0.5) 0%, transparent 60%);
+}
+
+.s3-header {
+  position: relative;
+  text-align: center;
+  padding: 44px 60px 28px;
+}
+.s3-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; color: var(--white);
+  margin-bottom: 8px;
+}
+.s3-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; color: var(--gold);
+  font-style: italic;
+}
+
+.s3-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.s3-block {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(196,163,90,0.15);
+  border-top: 2px solid var(--gold);
+  padding: 24px 22px;
+  position: relative;
+}
+.s3-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+.s3-block-title {
+  font-size: 14px; font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+.s3-block-line { width: 30px; height: 1px; background: var(--berry-light); margin-bottom: 12px; }
+.s3-block-body { font-size: 12px; color: rgba(248,240,232,0.8); line-height: 1.8; }
+
+/* ─────────────────────────────────────────────
+   SLIDE 4 · FOR DING YI
+───────────────────────────────────────────── */
+#s4 { background: var(--cream); }
+
+.s4-accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 5px;
+  background: var(--blue);
+}
+
+.s4-header {
+  padding: 40px 60px 0 70px;
+  margin-bottom: 24px;
+}
+.s4-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; color: var(--blue);
+  margin-bottom: 4px;
+}
+.s4-subtitle { font-size: 12px; color: var(--muted); letter-spacing: 2px; }
+
+.s4-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  padding: 0 60px 0 70px;
+  height: calc(100% - 120px);
+}
+
+.s4-left { display: flex; flex-direction: column; gap: 16px; }
+
+.s4-quote {
+  background: #EBF2FA;
+  border-left: 4px solid var(--blue);
+  padding: 20px 20px 20px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--blue);
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.s4-core {
+  background: var(--blue);
+  padding: 20px;
+  flex: 1;
+}
+.s4-core-title {
+  font-size: 12px; font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 2px; margin-bottom: 10px;
+}
+.s4-core-line { width: 30px; height: 1px; background: var(--rose); margin-bottom: 12px; }
+.s4-core-body { font-size: 12px; color: rgba(248,240,232,0.85); line-height: 1.9; }
+
+.s4-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-content: start;
+}
+
+.s4-card {
+  background: white;
+  border: 1px solid rgba(27,79,138,0.12);
+  border-top: 2px solid var(--blue);
+  padding: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.s4-card-num {
+  font-size: 24px; font-weight: 700;
+  color: rgba(27,79,138,0.12);
+  line-height: 1; margin-bottom: 8px;
+}
+.s4-card-title { font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
+.s4-card-div { width: 24px; height: 1px; background: rgba(27,79,138,0.2); margin-bottom: 10px; }
+.s4-card-body { font-size: 11.5px; color: var(--muted); line-height: 1.75; }
+
+/* ─────────────────────────────────────────────
+   SLIDE 5 · FOR SUN JING
+───────────────────────────────────────────── */
+#s5 { background: var(--cream); }
+
+.s5-accent {
+  position: absolute;
+  right: 0; top: 0; bottom: 0; width: 5px;
+  background: var(--purple);
+}
+
+.s5-header {
+  padding: 40px 70px 0 60px;
+  margin-bottom: 24px;
+  text-align: right;
+}
+.s5-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; color: var(--purple);
+  margin-bottom: 4px;
+}
+.s5-subtitle { font-size: 12px; color: var(--muted); letter-spacing: 2px; }
+
+.s5-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 0 70px 0 60px;
+  height: calc(100% - 120px);
+}
+
+.s5-right { display: flex; flex-direction: column; gap: 16px; }
+
+.s5-quote {
+  background: #F0EAF7;
+  border-right: 4px solid var(--purple);
+  padding: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--purple);
+  font-style: italic;
+  line-height: 1.8;
+  text-align: right;
+}
+
+.s5-core {
+  background: var(--purple);
+  padding: 20px;
+  flex: 1;
+}
+.s5-core-title {
+  font-size: 12px; font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 2px; margin-bottom: 10px;
+  text-align: right;
+}
+.s5-core-line { width: 30px; height: 1px; background: var(--rose); margin-bottom: 12px; margin-left: auto; }
+.s5-core-body { font-size: 12px; color: rgba(248,240,232,0.85); line-height: 1.9; text-align: right; }
+
+.s5-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-content: start;
+}
+
+.s5-card {
+  background: white;
+  border: 1px solid rgba(92,46,138,0.12);
+  border-top: 2px solid var(--purple);
+  padding: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.s5-card-num {
+  font-size: 24px; font-weight: 700;
+  color: rgba(92,46,138,0.1);
+  line-height: 1; margin-bottom: 8px;
+  text-align: right;
+}
+.s5-card-title { font-size: 13px; font-weight: 700; color: var(--purple); margin-bottom: 8px; }
+.s5-card-div { width: 24px; height: 1px; background: rgba(92,46,138,0.2); margin-bottom: 10px; }
+.s5-card-body { font-size: 11.5px; color: var(--muted); line-height: 1.75; }
+
+/* ─────────────────────────────────────────────
+   SLIDE 6 · COMMUNICATION
+───────────────────────────────────────────── */
+#s6 { background: #1A0820; }
+
+.s6-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(92,31,58,0.3) 0%, transparent 60%);
+}
+
+.s6-header {
+  position: relative;
+  text-align: center;
+  padding: 36px 60px 24px;
+}
+.s6-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; color: var(--white);
+  margin-bottom: 6px;
+}
+.s6-sub { font-size: 12px; color: var(--rose); letter-spacing: 2px; }
+
+.s6-table {
+  position: relative;
+  padding: 0 40px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.s6-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.s6-scenario {
+  background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px;
+  font-size: 13px; font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.s6-cell {
+  padding: 14px 18px;
+  font-size: 12px; line-height: 1.75;
+}
+.s6-cell.ding {
+  background: rgba(27,79,138,0.2);
+  border-left: 3px solid var(--blue-light);
+}
+.s6-cell.sun {
+  background: rgba(92,46,138,0.2);
+  border-left: 3px solid var(--purple-light);
+}
+.s6-cell-tag {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.s6-cell.ding .s6-cell-tag { color: var(--blue-light); }
+.s6-cell.sun  .s6-cell-tag { color: var(--purple-light); }
+.s6-cell-text { color: rgba(248,240,232,0.85); }
+.s6-cell-text strong { color: var(--gold-light); }
+
+/* ─────────────────────────────────────────────
+   SLIDE 7 · TIMELINE
+───────────────────────────────────────────── */
+#s7 { background: var(--cream); }
+
+.s7-header {
+  padding: 40px 60px 24px;
+  border-bottom: 1px solid rgba(61,14,36,0.1);
+}
+.s7-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; color: var(--berry);
+}
+
+.s7-timeline {
+  position: relative;
+  padding: 32px 60px 0;
+  display: flex; justify-content: space-between;
+  align-items: flex-end;
+  height: 230px;
+}
+
+.s7-line {
+  position: absolute;
+  left: 80px; right: 80px;
+  bottom: 40px;
+  height: 2px;
+  background: linear-gradient(to right, var(--rose), var(--gold), var(--rose));
+}
+
+.s7-year-block {
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center;
+  width: 230px;
+}
+
+.s7-card {
+  background: white;
+  border: 1px solid rgba(61,14,36,0.1);
+  border-top: 3px solid;
+  padding: 16px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  position: relative;
+}
+.s7-card::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 18px;
+  background: var(--gold); opacity: 0.5;
+}
+.s7-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: relative; z-index: 1;
+}
+
+.s7-year { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+.s7-year-label { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.s7-year-div { width: 24px; height: 1px; background: #ddd; margin-bottom: 8px; }
+.s7-year-body { font-size: 10.5px; color: var(--muted); line-height: 1.6; }
+
+.s7-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 20px 60px 0;
+}
+.s7-note {
+  padding: 14px 16px;
+  font-size: 11.5px; line-height: 1.75; color: var(--muted);
+}
+.s7-note.ding { background: #EBF2FA; border-left: 3px solid var(--blue); }
+.s7-note.sun  { background: #F0EAF7; border-left: 3px solid var(--purple); }
+.s7-note-title { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.s7-note.ding .s7-note-title { color: var(--blue); }
+.s7-note.sun  .s7-note-title { color: var(--purple); }
+
+/* ─────────────────────────────────────────────
+   SLIDE 8 · SHARED CHALLENGES
+───────────────────────────────────────────── */
+#s8 { background: var(--berry); }
+
+.s8-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 90% 90%, rgba(34,10,21,0.6) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10% 10%, rgba(92,31,58,0.3) 0%, transparent 55%);
+}
+
+.s8-header {
+  position: relative;
+  padding: 40px 60px 24px;
+}
+.s8-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; color: var(--white);
+  margin-bottom: 6px;
+}
+.s8-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; color: var(--gold);
+  font-style: italic;
+}
+
+.s8-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 60px;
+}
+
+.s8-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(196,163,90,0.2);
+  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.s8-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 300;
+  color: var(--gold); opacity: 0.5;
+  line-height: 1;
+}
+.s8-card-title { font-size: 14px; font-weight: 700; color: var(--gold-light); margin-bottom: 8px; }
+.s8-card-text { font-size: 11.5px; color: rgba(248,240,232,0.75); line-height: 1.8; }
+.s8-card-text strong { color: var(--gold-light); }
+
+/* ─────────────────────────────────────────────
+   SLIDE 9 · WHAT YOU CAN BUILD
+───────────────────────────────────────────── */
+#s9 { background: var(--cream); }
+
+.s9-header {
+  padding: 36px 60px 0;
+  border-bottom: 1px solid rgba(61,14,36,0.1);
+  padding-bottom: 16px;
+}
+.s9-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: var(--berry);
+  margin-bottom: 6px;
+}
+
+.s9-quote-bar {
+  background: var(--berry);
+  margin: 0 60px;
+  padding: 14px 20px;
+  font-size: 13px; color: var(--cream);
+  line-height: 1.7;
+  margin-top: 16px;
+}
+.s9-quote-bar em { color: var(--gold-light); font-style: normal; font-weight: 600; }
+
+.s9-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 14px 60px;
+}
+
+.s9-card {
+  background: white;
+  border: 1px solid rgba(61,14,36,0.08);
+  padding: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.s9-card-icon { font-size: 22px; margin-bottom: 10px; }
+.s9-card-title { font-size: 13px; font-weight: 700; color: var(--berry); margin-bottom: 6px; }
+.s9-card-div { width: 24px; height: 1px; background: var(--rose); opacity: 0.5; margin-bottom: 10px; }
+.s9-card-body { font-size: 11.5px; color: var(--muted); line-height: 1.7; }
+
+/* ─────────────────────────────────────────────
+   SLIDE 10 · CLOSING
+───────────────────────────────────────────── */
+#s10 { background: var(--ink); }
+
+.s10-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 70% at 30% 50%, rgba(61,14,36,0.6) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(27,20,53,0.4) 0%, transparent 55%);
+}
+.s10-gold-top {
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.s10-inner {
+  position: relative;
+  padding: 50px 80px;
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.s10-tag {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px; color: var(--white);
+  text-align: center; margin-bottom: 32px;
+}
+
+.s10-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(196,163,90,0.2);
+  border-left: 3px solid var(--gold);
+  padding: 22px 28px;
+  font-size: 14px; color: rgba(248,240,232,0.85);
+  line-height: 2;
+  margin-bottom: 28px;
+}
+.s10-box strong { color: var(--gold-light); }
+.s10-box em { color: var(--rose); font-style: normal; }
+
+.s10-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.s10-final {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(196,163,90,0.15);
+  border-top: 2px solid var(--gold);
+  padding: 20px;
+  text-align: center;
+}
+.s10-final-title { font-size: 15px; font-weight: 700; color: var(--gold-light); margin-bottom: 8px; line-height: 1.4; }
+.s10-final-div { width: 30px; height: 1px; background: var(--rose); opacity: 0.4; margin: 0 auto 10px; }
+.s10-final-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; color: var(--rose); font-style: italic; line-height: 1.5;
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.2);
+  padding: 7px 20px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.disclaimer-dark { color: rgba(61,14,36,0.35); background: rgba(0,0,0,0.04); }
+
+/* ── Responsive scale ── */
+@media (max-width: 1280px) {
+  #deck {
+    width: 100vw;
+    height: calc(100vw * 0.5625);
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="counter">01 / 10</div>
+
+<div id="stage">
+ <div id="deck">
+
+  <!-- ══ SLIDE 1 · COVER ══ -->
+  <div class="slide active" id="s1">
+    <div class="s1-bg"></div>
+    <div class="s1-left reveal reveal-1">
+      <div class="s1-label">庚金日元</div>
+      <div class="s1-person">丁一</div>
+      <div class="s1-sub">偏印格 · 极强</div>
+      <div class="s1-gold-line"></div>
+      <div class="s1-label">乙木日元</div>
+      <div class="s1-person">孙晶</div>
+      <div class="s1-sub">正印格 · 偏强</div>
+    </div>
+    <div class="s1-right">
+      <div class="s1-eyebrow reveal reveal-1">⁂ 命理关系深度解析 · 2026</div>
+      <div class="s1-title reveal reveal-2">亲密关系<br><span>相处建议</span></div>
+      <div class="s1-divider reveal reveal-3"></div>
+      <div class="s1-subtitle reveal reveal-3">庚克乙 · 金木相逢 · 深缘解析</div>
+      <div class="s1-desc reveal reveal-4">基于八字命盘格局理论 · 仅供文化娱乐参考</div>
+    </div>
+    <div class="s1-cards reveal reveal-5">
+      <div class="s1-card">命格共鸣</div>
+      <div class="s1-card">深度解析</div>
+      <div class="s1-card">相处建议</div>
+      <div class="s1-card">时间窗口</div>
+    </div>
+    <div class="disclaimer">⚠ 本演示基于传统命理理论，仅供文化娱乐参考，不构成任何决策依据</div>
+  </div>
+
+  <!-- ══ SLIDE 2 · WHY ══ -->
+  <div class="slide" id="s2">
+    <div class="s2-header reveal reveal-1">
+      <div class="s2-tag">01 · 命格镜像</div>
+      <div class="s2-title">你们为何如此相似，又如此相克？</div>
+    </div>
+    <div class="s2-body">
+      <div class="s2-card ding reveal reveal-2">
+        <div class="s2-card-title">
+          <span class="s2-dot" style="background:var(--blue)"></span>
+          丁一 · 庚金日元
+        </div>
+        <div class="s2-point"><span class="s2-arrow">▸</span><span>偏印格极强，内心有孤城</span></div>
+        <div class="s2-point"><span class="s2-arrow">▸</span><span>日月辰戌相冲，感情宫先天动荡</span></div>
+        <div class="s2-point"><span class="s2-arrow">▸</span><span>妻星甲乙木原局全无，需大运补救</span></div>
+        <div class="s2-point"><span class="s2-arrow">▸</span><span>控制欲强，高标准，难以妥协</span></div>
+        <div class="s2-point"><span class="s2-arrow">▸</span><span>甲午大运末段，婚恋黄金窗口期</span></div>
+      </div>
+
+      <div class="s2-middle reveal reveal-3">
+        <div class="s2-middle-line"></div>
+        <div class="s2-clash-char">庚</div>
+        <div class="s2-clash">克</div>
+        <div class="s2-clash-char">乙</div>
+        <div class="s2-heart">♥</div>
+        <div class="s2-clash" style="font-size:10px;color:var(--rose)">相克深缘</div>
+        <div class="s2-middle-line"></div>
+      </div>
+
+      <div class="s2-card sun reveal reveal-2">
+        <div class="s2-card-title">
+          <span class="s2-dot" style="background:var(--purple)"></span>
+          孙晶 · 乙木日元
+        </div>
+        <div class="s2-point"><span class="s2-arrow" style="color:var(--purple-light)">▸</span><span>正印格偏强，精神世界极为丰富</span></div>
+        <div class="s2-point"><span class="s2-arrow" style="color:var(--purple-light)">▸</span><span>日月巳亥相冲，感情宫先天动荡</span></div>
+        <div class="s2-point"><span class="s2-arrow" style="color:var(--purple-light)">▸</span><span>夫星庚辛金原局全无，需大运补救</span></div>
+        <div class="s2-point"><span class="s2-arrow" style="color:var(--purple-light)">▸</span><span>独立难妥协，惯于等待被理解</span></div>
+        <div class="s2-point"><span class="s2-arrow" style="color:var(--purple-light)">▸</span><span>庚辰大运，官星历史上首次激活</span></div>
+      </div>
+    </div>
+    <div class="s2-bottom reveal reveal-4">
+      命理关键：你们<strong>互为彼此命中最缺失的五行</strong>——丁一的妻星正是乙木，孙晶的夫星正是庚金。这不是巧合，这是命格的深度映射，也是两人之间无论如何都绕不开的根本缘起。
+    </div>
+    <div class="disclaimer disclaimer-dark">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 3 · CLASH ESSENCE ══ -->
+  <div class="slide" id="s3">
+    <div class="s3-bg"></div>
+    <div class="s3-header reveal reveal-1">
+      <div class="s3-title">庚克乙：深缘的本质</div>
+      <div class="s3-sub">相克不是相害，而是最强烈的相互塑造</div>
+    </div>
+    <div class="s3-grid reveal reveal-2">
+      <div class="s3-block">
+        <span class="s3-icon">🔥</span>
+        <div class="s3-block-title">对丁一而言</div>
+        <div class="s3-block-line"></div>
+        <div class="s3-block-body">孙晶的乙木，是他原局全缺的妻星。她的存在让他的命盘「完整」。但庚金克乙木的本能，会让他不自觉地想「掌控」她——这是命格赋予的引力，也是需要有意识克服的惯性。</div>
+      </div>
+      <div class="s3-block">
+        <span class="s3-icon">♥</span>
+        <div class="s3-block-title">两人之间</div>
+        <div class="s3-block-line"></div>
+        <div class="s3-block-body">庚金的刚锐遇上乙木的柔韧，相克之情最为刻骨铭心。乙木在庚金前「既被理解，又被压制」——这种复杂感受是真缘的印记，在别处很难复制，因为它来自命格最深处的共振。</div>
+      </div>
+      <div class="s3-block">
+        <span class="s3-icon">🌿</span>
+        <div class="s3-block-title">对孙晶而言</div>
+        <div class="s3-block-line"></div>
+        <div class="s3-block-body">丁一的庚金，是她命中从未有过的夫星。被他影响、被他「克」一下，反而是感到被看见、被需要的信号。但乙木的自主性不能因此消融——有根的乙木，才能真正承载这份深缘。</div>
+      </div>
+    </div>
+    <div class="disclaimer">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 4 · FOR DING YI ══ -->
+  <div class="slide" id="s4">
+    <div class="s4-accent"></div>
+    <div class="s4-header reveal reveal-1">
+      <div class="s4-name">致丁一</div>
+      <div class="s4-subtitle">庚金日元的相处智慧 · DING YI'S GUIDE</div>
+    </div>
+    <div class="s4-layout">
+      <div class="s4-left reveal reveal-2">
+        <div class="s4-quote">
+          庚金之刚，<br>遇上乙木，需懂得弯而不折。<br>掌控不是爱，看见才是。
+        </div>
+        <div class="s4-core">
+          <div class="s4-core-title">你的命格核心功课</div>
+          <div class="s4-core-line"></div>
+          <div class="s4-core-body">庚金最难学会的不是征服，而是放手。在与孙晶的关系中，你对她的影响力已经刻入命格——你无需证明，你只需要选择「用这份力量保护她，而非定义她」。甲午大运末段是你一生中妻星能量最旺的时期，2027-2028年是关键节点，请勿错过。</div>
+        </div>
+      </div>
+      <div class="s4-right reveal reveal-3">
+        <div class="s4-card">
+          <div class="s4-card-num">01</div>
+          <div class="s4-card-title">放下掌控欲</div>
+          <div class="s4-card-div"></div>
+          <div class="s4-card-body">庚金天性强势，会本能地想「定义」孙晶的节奏与方向。请记住：乙木的独立是她的根，无根的乙木会枯萎——连同你们的关系。</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-num">02</div>
+          <div class="s4-card-title">主动展示脆弱</div>
+          <div class="s4-card-div"></div>
+          <div class="s4-card-body">偏印极重的你习惯将内心封存。孙晶需要看见你城墙背后那个真实的自己，才愿意真正靠近。</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-num">03</div>
+          <div class="s4-card-title">「对的」换成「被听见」</div>
+          <div class="s4-card-div"></div>
+          <div class="s4-card-body">两个偏印格在一起，最容易变成「谁更有道理」的博弈。放弃赢得辩论，转而问：「你当时是什么感受？」</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-num">04</div>
+          <div class="s4-card-title">把握2027-2028年窗口</div>
+          <div class="s4-card-div"></div>
+          <div class="s4-card-body">甲午大运末段是命格婚恋最成熟的时期。不要让「等到更好的时机」成为拖延的借口——窗口不等人。</div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer disclaimer-dark">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 5 · FOR SUN JING ══ -->
+  <div class="slide" id="s5">
+    <div class="s5-accent"></div>
+    <div class="s5-header reveal reveal-1">
+      <div class="s5-name">致孙晶</div>
+      <div class="s5-subtitle">乙木日元的相处智慧 · SUN JING'S GUIDE</div>
+    </div>
+    <div class="s5-layout">
+      <div class="s5-left reveal reveal-3">
+        <div class="s5-card">
+          <div class="s5-card-num" style="text-align:right">01</div>
+          <div class="s5-card-title">打破沉默等待</div>
+          <div class="s5-card-div"></div>
+          <div class="s5-card-body">卯卯自刑的你习惯「等待被理解」。但丁一不是读心术高手——你需要用语言告诉他你的感受，而不是等他猜。</div>
+        </div>
+        <div class="s5-card">
+          <div class="s5-card-num" style="text-align:right">02</div>
+          <div class="s5-card-title">允许被影响</div>
+          <div class="s5-card-div"></div>
+          <div class="s5-card-body">比肩乙乙的独立性是优势，也是屏障。被丁一影响、被他「克」一下，并不意味着失去自我——那是两人连接真正发生的时刻。</div>
+        </div>
+        <div class="s5-card">
+          <div class="s5-card-num" style="text-align:right">03</div>
+          <div class="s5-card-title">区分「理性」与「恐惧」</div>
+          <div class="s5-card-div"></div>
+          <div class="s5-card-body">你的逻辑思维会用分析来保护自己。当你在解构这段关系时，请停下来问：「我是在理性思考，还是在用思考逃避感受？」</div>
+        </div>
+        <div class="s5-card">
+          <div class="s5-card-num" style="text-align:right">04</div>
+          <div class="s5-card-title">2026年主动出击</div>
+          <div class="s5-card-div"></div>
+          <div class="s5-card-body">庚辰大运正官入场，是你命格中夫星最活跃的时期。2026年感情桃花旺——等待的窗口正在关闭，主动的时机已经到来。</div>
+        </div>
+      </div>
+      <div class="s5-right reveal reveal-2">
+        <div class="s5-quote">
+          乙木之柔，<br>在庚金面前弯曲，<br>是韧性，而非失去自我。
+        </div>
+        <div class="s5-core">
+          <div class="s5-core-title">你的命格核心功课</div>
+          <div class="s5-core-line"></div>
+          <div class="s5-core-body">乙木最难学会的是：被爱不等于被消融。庚金的存在感会是强烈的，但「感受到压力」不代表你的自我受损——那可能只是两颗偏印的孤独，终于触碰到了彼此的边界。庚辰大运（2021-2031）是你命格第一次真正激活夫星的十年，请珍惜。</div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer disclaimer-dark">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 6 · COMMUNICATION ══ -->
+  <div class="slide" id="s6">
+    <div class="s6-bg"></div>
+    <div class="s6-header reveal reveal-1">
+      <div class="s6-title">如何与彼此说话</div>
+      <div class="s6-sub">三个场景 · 两种语言 · 一种智慧</div>
+    </div>
+    <div class="s6-table reveal reveal-2">
+      <div class="s6-row">
+        <div class="s6-scenario">当感到<br>被忽视时</div>
+        <div class="s6-cell ding">
+          <div class="s6-cell-tag">丁一</div>
+          <div class="s6-cell-text">直说：<strong>「我需要你花更多时间在我们身上。」</strong><br>不要用沉默或暗示期待对方读心——庚金的强势外壳下，其实也渴望被回应。</div>
+        </div>
+        <div class="s6-cell sun">
+          <div class="s6-cell-tag">孙晶</div>
+          <div class="s6-cell-text">直说：<strong>「这件事让我感到被忽略了。」</strong><br>不要用理性分析来掩盖受伤的情绪——乙木的柔韧里，有时也需要允许自己说「我受伤了」。</div>
+        </div>
+      </div>
+      <div class="s6-row reveal reveal-3">
+        <div class="s6-scenario">当发生<br>分歧时</div>
+        <div class="s6-cell ding">
+          <div class="s6-cell-tag">丁一</div>
+          <div class="s6-cell-text">先问：<strong>「你当时是什么感受？」</strong><br>庚金的本能是「我来解决问题」，但乙木需要的先是「被听见」——理解先于方案。</div>
+        </div>
+        <div class="s6-cell sun">
+          <div class="s6-cell-tag">孙晶</div>
+          <div class="s6-cell-text">说出感受，而非论点。<strong>「我觉得我们在这件事上想法不同」</strong>比「你错了」更容易被接受，也更真实。</div>
+        </div>
+      </div>
+      <div class="s6-row reveal reveal-4">
+        <div class="s6-scenario">当需要<br>空间时</div>
+        <div class="s6-cell ding">
+          <div class="s6-cell-tag">丁一</div>
+          <div class="s6-cell-text">给她空间，<strong>不要解读为拒绝。</strong><br>偏印格的孙晶需要独处来充电——这不是冷落你，是她维持自我的方式。</div>
+        </div>
+        <div class="s6-cell sun">
+          <div class="s6-cell-tag">孙晶</div>
+          <div class="s6-cell-text">提前告知，而不是消失。<strong>「我需要一些独处时间」</strong>是一句对双方都体贴的话，让庚金安心，让乙木自由。</div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 7 · TIMELINE ══ -->
+  <div class="slide" id="s7">
+    <div class="s7-header reveal reveal-1">
+      <div class="s7-title">命格时间线：把握关键窗口期</div>
+    </div>
+    <div class="s7-timeline reveal reveal-2">
+      <div class="s7-line"></div>
+      <div class="s7-year-block">
+        <div class="s7-card" style="border-top-color:var(--rose)">
+          <div class="s7-year" style="color:var(--rose)">2026</div>
+          <div class="s7-year-label">感情萌动期</div>
+          <div class="s7-year-div"></div>
+          <div class="s7-year-body">丙午年 · 官星旺盛<br>桃花显现<br><strong style="color:var(--berry)">主动是关键</strong></div>
+        </div>
+        <div class="s7-dot" style="background:var(--rose);border-color:var(--cream)"></div>
+      </div>
+      <div class="s7-year-block">
+        <div class="s7-card" style="border-top-color:var(--berry)">
+          <div class="s7-year" style="color:var(--berry)">2027</div>
+          <div class="s7-year-label">关系确认期</div>
+          <div class="s7-year-div"></div>
+          <div class="s7-year-body">丁未年 · 财星生官<br>推进或结束<br><strong style="color:var(--berry)">需做决断</strong></div>
+        </div>
+        <div class="s7-dot" style="background:var(--berry);border-color:var(--cream)"></div>
+      </div>
+      <div class="s7-year-block">
+        <div class="s7-card" style="border-top-color:var(--blue);box-shadow:0 8px 32px rgba(27,79,138,0.15)">
+          <div class="s7-year" style="color:var(--blue)">2028</div>
+          <div class="s7-year-label">最佳落定年 ⭐</div>
+          <div class="s7-year-div"></div>
+          <div class="s7-year-body">戊申年 · 官财双透<br>夫妻星最强<br><strong style="color:var(--blue)">承诺窗口</strong></div>
+        </div>
+        <div class="s7-dot" style="background:var(--blue);border-color:var(--cream)"></div>
+      </div>
+      <div class="s7-year-block">
+        <div class="s7-card" style="border-top-color:var(--purple)">
+          <div class="s7-year" style="color:var(--purple)">2029</div>
+          <div class="s7-year-label">巩固深化期</div>
+          <div class="s7-year-div"></div>
+          <div class="s7-year-body">己酉年 · 七杀压力<br>旧缘复燃<br><strong style="color:var(--purple)">关系深化</strong></div>
+        </div>
+        <div class="s7-dot" style="background:var(--purple);border-color:var(--cream)"></div>
+      </div>
+    </div>
+    <div class="s7-notes reveal reveal-3">
+      <div class="s7-note ding">
+        <div class="s7-note-title">丁一的时间压力</div>
+        甲午大运将于2028年结束，届时进入癸巳大运（伤杀运），感情线将更趋复杂。<strong>2026-2028年是命格层面婚恋落地的最后黄金窗口</strong>，错过后路会更曲折，而非不可能——只是成本更高。
+      </div>
+      <div class="s7-note sun">
+        <div class="s7-note-title">孙晶的时间机遇</div>
+        庚辰大运（2021-2031）是孙晶命格中夫星能量<strong>首次完整激活的十年</strong>。当下的每一年，都有着超越过去任何时期的感情命格支撑。2028年官财双透，是感情落地的命理最佳年份。
+      </div>
+    </div>
+    <div class="disclaimer disclaimer-dark">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 8 · CHALLENGES ══ -->
+  <div class="slide" id="s8">
+    <div class="s8-bg"></div>
+    <div class="s8-header reveal reveal-1">
+      <div class="s8-title">两个偏印格在一起：共同的挑战</div>
+      <div class="s8-sub">了解你们共有的命格模式，才能有意识地打破它</div>
+    </div>
+    <div class="s8-grid reveal reveal-2">
+      <div class="s8-card">
+        <div class="s8-num">01</div>
+        <div>
+          <div class="s8-card-title">「谁来妥协」的无声博弈</div>
+          <div class="s8-card-text">两个偏印格的人独立意识都在顶格，长期相处中，双方都在等对方先软化。<br><strong>破解之道：</strong>约定「轮流」妥协，或识别「这次谁的需求更迫切」——把无声博弈变成有意识的协商。</div>
+        </div>
+      </div>
+      <div class="s8-card">
+        <div class="s8-num">02</div>
+        <div>
+          <div class="s8-card-title">沉默制造距离</div>
+          <div class="s8-card-text">双方均有将情绪内化的命格倾向，冷战可能发展成冷漠。<br><strong>破解之道：</strong>建立「定期说真话」的仪式，哪怕只是10分钟的「我最近心里有一件事」。</div>
+        </div>
+      </div>
+      <div class="s8-card">
+        <div class="s8-num">03</div>
+        <div>
+          <div class="s8-card-title">精神内耗互相放大</div>
+          <div class="s8-card-text">两个偏印格同处，当一方陷入焦虑，另一方的偏印能量会无意识地强化这种氛围。<br><strong>破解之道：</strong>培养共同的「身体性」活动（运动、烹饪、旅行）打破头脑循环。</div>
+        </div>
+      </div>
+      <div class="s8-card">
+        <div class="s8-num">04</div>
+        <div>
+          <div class="s8-card-title">对伴侣期望过高</div>
+          <div class="s8-card-text">日月相冲的命格让两人对感情都有深层不安全感，容易将伴侣理想化后再失望。<br><strong>破解之道：</strong>定期说出「谢谢你今天做的这件事」，把理想落回到具体感激。</div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 9 · WHAT YOU BUILD ══ -->
+  <div class="slide" id="s9">
+    <div class="s9-header reveal reveal-1">
+      <div class="s9-title">这段关系能给你们带来什么</div>
+    </div>
+    <div class="s9-quote-bar reveal reveal-2">
+      相克之情最为刻骨铭心，因为对方的存在直接触动了你最深的命格缺失——<br>
+      那是一种<em>「终于被真正看见」</em>的感觉，你无法在别处复制。
+    </div>
+    <div class="s9-grid reveal reveal-3">
+      <div class="s9-card">
+        <div class="s9-card-icon">♥</div>
+        <div class="s9-card-title">命格层面的深度连接</div>
+        <div class="s9-card-div"></div>
+        <div class="s9-card-body">互为彼此最缺失的五行，这种连接是骨子里的——对方让你感到完整，而非简单的喜欢。</div>
+      </div>
+      <div class="s9-card">
+        <div class="s9-card-icon">💡</div>
+        <div class="s9-card-title">精神世界的真正对等</div>
+        <div class="s9-card-div"></div>
+        <div class="s9-card-body">两个偏印格可以真正做到「精神理解」——在别处需要解释的孤独，在对方这里不言而喻。</div>
+      </div>
+      <div class="s9-card">
+        <div class="s9-card-icon">🔥</div>
+        <div class="s9-card-title">相互激发的成长张力</div>
+        <div class="s9-card-div"></div>
+        <div class="s9-card-body">庚克乙带来的压力，会让孙晶长出更深的根；金被木疏导，会让丁一学会更柔的力量。</div>
+      </div>
+      <div class="s9-card">
+        <div class="s9-card-icon">🤝</div>
+        <div class="s9-card-title">事业上的天然互补</div>
+        <div class="s9-card-div"></div>
+        <div class="s9-card-body">丁一的资源整合能力 + 孙晶的战略深度，是命格层面最接近「黄金搭档」的组合。</div>
+      </div>
+      <div class="s9-card">
+        <div class="s9-card-icon">🌿</div>
+        <div class="s9-card-title">对彼此孤独的真正疗愈</div>
+        <div class="s9-card-div"></div>
+        <div class="s9-card-body">两人的孤独来自同一种命格——日月相冲的分离感。也因此，只有彼此最能真正理解并承接。</div>
+      </div>
+      <div class="s9-card">
+        <div class="s9-card-icon">✨</div>
+        <div class="s9-card-title">稀有的命格深缘</div>
+        <div class="s9-card-div"></div>
+        <div class="s9-card-body">原局互补 + 日干相克 + 偏印共鸣，这种命格组合在传统命理中被视为「缘分极深」的标志。</div>
+      </div>
+    </div>
+    <div class="disclaimer disclaimer-dark">⚠ 本演示基于传统命理理论，仅供文化娱乐参考</div>
+  </div>
+
+  <!-- ══ SLIDE 10 · CLOSING ══ -->
+  <div class="slide" id="s10">
+    <div class="s10-bg"></div>
+    <div class="s10-gold-top"></div>
+    <div class="s10-inner">
+      <div class="s10-tag reveal reveal-1">写在最后</div>
+      <div class="s10-box reveal reveal-2">
+        <strong>命盘给出的是倾向，不是命运。</strong><br>
+        丁一与孙晶的命格结构说明：你们之间的缘分足够深，深到互相嵌入对方命盘最核心的缺口。但「深缘」本身并不保证「幸福」——幸福需要两个人<strong>有意识地选择</strong>，用行动翻译命格给出的可能性。<br>
+        <em>庚金需要学会弯；乙木需要学会说。</em>这是两人共同的功课，也是这段关系能否真正生长的关键。
+      </div>
+      <div class="s10-cards reveal reveal-3">
+        <div class="s10-final">
+          <div class="s10-final-title">尊重彼此的<br>独立性</div>
+          <div class="s10-final-div"></div>
+          <div class="s10-final-sub">偏印格的孤独是内核，不是缺陷</div>
+        </div>
+        <div class="s10-final">
+          <div class="s10-final-title">主动表达<br>胜于等待</div>
+          <div class="s10-final-div"></div>
+          <div class="s10-final-sub">命格的缘分需要行动来激活</div>
+        </div>
+        <div class="s10-final">
+          <div class="s10-final-title">相克之中<br>共同生长</div>
+          <div class="s10-final-div"></div>
+          <div class="s10-final-sub">最深的连接往往发生在张力里</div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">⚠ 本演示基于传统命理理论，仅供文化娱乐参考，不构成任何决策依据</div>
+  </div>
+
+ </div><!-- /deck -->
+</div><!-- /stage -->
+
+<!-- Navigation dots -->
+<div id="nav">
+  <div class="dot active" onclick="goTo(0)"></div>
+  <div class="dot" onclick="goTo(1)"></div>
+  <div class="dot" onclick="goTo(2)"></div>
+  <div class="dot" onclick="goTo(3)"></div>
+  <div class="dot" onclick="goTo(4)"></div>
+  <div class="dot" onclick="goTo(5)"></div>
+  <div class="dot" onclick="goTo(6)"></div>
+  <div class="dot" onclick="goTo(7)"></div>
+  <div class="dot" onclick="goTo(8)"></div>
+  <div class="dot" onclick="goTo(9)"></div>
+</div>
+
+<div id="nav-btns">
+  <div class="nav-zone left" onclick="prev()">
+    <div class="nav-arrow">‹</div>
+  </div>
+  <div class="nav-zone right" onclick="next()">
+    <div class="nav-arrow">›</div>
+  </div>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots   = document.querySelectorAll('.dot');
+const counter = document.getElementById('counter');
+let cur = 0;
+
+function goTo(n) {
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur = (n + slides.length) % slides.length;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+  counter.textContent = String(cur + 1).padStart(2,'0') + ' / ' + String(slides.length).padStart(2,'0');
+  // Re-trigger animations
+  slides[cur].querySelectorAll('.reveal').forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = '';
+  });
+}
+
+function next() { goTo(cur + 1); }
+function prev() { goTo(cur - 1); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); prev(); }
+});
+
+// Touch/swipe
+let tx = 0;
+document.getElementById('deck').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.getElementById('deck').addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+});
+
+// Responsive scaling
+function scale() {
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const ratio = Math.min(vw / 1200, vh / 675) * 0.96;
+  document.getElementById('deck').style.transform = `scale(${ratio})`;
+  document.getElementById('deck').style.width  = '1200px';
+  document.getElementById('deck').style.height = '675px';
+}
+window.addEventListener('resize', scale);
+scale();
+</script>
+</body>
+</html>
